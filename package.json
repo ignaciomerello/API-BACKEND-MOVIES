@@ -2,7 +2,7 @@
   "name": "api-backend-movies",
   "version": "1.0.0",
   "description": "IN THIS PROJECT I WILL FETCH THE RESULTS FROM THE API REST THEMOVIEDB CREATING THE ENDPOINTS TO ACCESS THEIR MOVIES ARCHIVE",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ignaciomerello/API-BACKEND-MOVIES#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "mysql2": "^2.2.5",
     "sequelize": "^6.3.5"
