@@ -2,7 +2,7 @@ const express = require('express');
 
 const app = express();
 
-app.use(express.json());
+const PORT = 3000;
 
 app.use(express.json()); //middleware: parsea el body JSON y evita que req.body sea undefined
 
