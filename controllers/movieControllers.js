@@ -1,9 +1,9 @@
-const { Movie } = require("../models");
+const { Movies } = require("../models");
 
 const MovieController = {
-    async getAllMovies(req,res){
+    async getAll(req,res){
         try {
-            const movies = await Movie.getAll();
+            const movies = await Movies.findAll();
             res.send(movies);
             
         } catch (error) {
