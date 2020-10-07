@@ -14,11 +14,12 @@ const OrderController = {
     async getById(req,res){
         try {
             const value = await Order.findByPk(req.params.id);
-            res.send({value});
-            
+            if(!value){
+                return res.status(400).json({message:'Order was not found'}); 
+            }
         } catch (error) {
             console.log(error);
-            res.status(500).json({message:'Unable to get movie selected'});
+            res.status(500).json({message:'Unable to get order selected'});
         }
     },
 }

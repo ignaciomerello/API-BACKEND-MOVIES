@@ -14,7 +14,9 @@ const MovieController = {
     async getById(req,res){
         try {
             const value = await Movies.findByPk(req.params.id);
-            res.send({value});
+            if(!value){
+                return res.status(400).json({message:'Movie does not exist'}); 
+            }
             
         } catch (error) {
             console.log(error);
