@@ -1,19 +1,19 @@
-const { User } = require("../models");
+const { Movies } = require("../models");
 
-const UserController = {
+const MovieController = {
     async getAll(req,res){
         try {
-            const value = await User.findAll();
-            res.send(value);
+            const values = await Movies.findAll();
+            res.send(values);
             
         } catch (error) {
             console.log(error);
-            res.status(500).json({message:'Unable to get user'});
+            res.status(500).json({message:'Unable to get movies'});
         }
     },
     async getById(req,res){
         try {
-            const value = await User.findByPk(req.params.id);
+            const value = await Movies.findByPk(req.params.id);
             res.send({value});
             
         } catch (error) {
@@ -23,4 +23,4 @@ const UserController = {
     },
 }
 
-module.exports = UserController;
+module.exports = MovieController;
