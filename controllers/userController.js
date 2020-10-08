@@ -24,6 +24,7 @@ const UserController = {
             res.status(500).json({message:'User not found'});
         }
     },
+    
 }
 
 module.exports = UserController;
