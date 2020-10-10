@@ -1,12 +1,11 @@
 const {
-    Movies
+    Movie,Actor
 } = require("../models");
-// const { delete } = require("../routes/userRoutes");
 
 const MovieController = {
     async getAll(req, res) {
         try {
-            const values = await Movies.findAll();
+            const values = await Movie.findAll({ include:Actor });
             res.send(values);
 
         } catch (error) {
@@ -18,7 +17,7 @@ const MovieController = {
     },
     async getById(req, res) {
         try {
-            const value = await Movies.findByPk(req.params.id);
+            const value = await Movie.findByPk(req.params.id);
             if (!value) {
                 return res.status(400).json({
                     message: 'Movie does not exist'
@@ -35,7 +34,7 @@ const MovieController = {
     },
     async create(req, res) {
         try {
-            const value = await Movies.create(req.body);
+            const value = await Movie.create(req.body);
             res.send(value);
 
         } catch (error) {
@@ -47,7 +46,7 @@ const MovieController = {
     },
     async delete(req, res) {
         try {
-            const value = await Movies.destroy({
+            const value = await Movie.destroy({
                 where: {
                     id: req.params.id
                 }
