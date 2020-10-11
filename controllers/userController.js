@@ -26,13 +26,13 @@ const UserController = {
     },
     async create(req, res) {
         try {
-            const value = await Movie.create(req.body);
+            const value = await User.create(req.body);
             res.send(value);
 
         } catch (error) {
             console.log(error);
             res.status(500).json({
-                message: 'Unable to get order selected'
+                message: 'Unable to create User'
             });
         }
     },
