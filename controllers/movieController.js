@@ -40,7 +40,7 @@ const MovieController = {
         } catch (error) {
             console.log(error);
             res.status(500).json({
-                message: 'Unable to get order selected'
+                message: 'Unable to get Movie selected'
             });
         }
     },
