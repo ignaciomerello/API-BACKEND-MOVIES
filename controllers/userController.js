@@ -24,6 +24,18 @@ const UserController = {
             res.status(500).json({message:'User not found'});
         }
     },
+    async create(req, res) {
+        try {
+            const value = await Movie.create(req.body);
+            res.send(value);
+
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({
+                message: 'Unable to get order selected'
+            });
+        }
+    },
     
 }
 
