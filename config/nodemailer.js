@@ -1,6 +1,6 @@
 "use strict";
 const nodemailer = require("nodemailer");
-let transport = nodemailer.createTransport({
+let transporter = nodemailer.createTransport({
         host: "smtp.mailtrap.io",
         port: 2525,
         auth: {
