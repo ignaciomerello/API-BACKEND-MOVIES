@@ -5,8 +5,8 @@ const {
 const MovieController = {
     async getAll(req, res) {
         try {
-            const values = await Movie.findAll({ include:Actor });
-            res.send(values);
+            const value = await Movie.findAll({ include:Actor });
+            res.send(value);
 
         } catch (error) {
             console.log(error);

@@ -1,9 +1,9 @@
-const { User } = require("../models");
+const { User,Order } = require("../models");
 
 const UserController = {
     async getAll(req,res){
         try {
-            const value = await User.findAll();
+            const value = await User.findAll({ include:Order});
             res.send(value);
             
         } catch (error) {
