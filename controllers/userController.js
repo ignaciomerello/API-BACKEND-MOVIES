@@ -36,6 +36,25 @@ const UserController = {
             });
         }
     },
+    async delete(req, res) {
+        try {
+            const value = await User.destroy({
+                where: {
+                    id: req.params.id
+                }
+            });
+            res.send({
+                message: 'User successfully removed'
+            })
+        
+
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({
+                message: 'Unable to delete the Movie'
+            });
+        }
+    },
     
 }
 
