@@ -37,7 +37,7 @@ This is the file that contains the configuration of the API
 {
   "development": {
     "username": "root",
-    "password": "19Mysql67!",
+    "password": "XXX",
     "database": "db_movies",
     "host": "127.0.0.1",
     "dialect": "mysql"
