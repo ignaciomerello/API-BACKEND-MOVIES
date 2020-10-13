@@ -199,10 +199,20 @@ The user would access to the following JSON request:
 ]
 ```
 
+
+## Heroku
+As an attempt to deploy the API the Project was transferred to the Heroku
+servers.
+
+``` js
+https://api-backend-movies-iml.herokuapp.com/
+```
+
+
 ## Documentation
 
 - [Express](https://expressjs.com/)
-- [Seguelize](https://sequelize.org/master/manual/migrations.html)
+- [Seguelize](https://sequelize.org/master/manual/getting-started.html)
 
 
 ## Author 
