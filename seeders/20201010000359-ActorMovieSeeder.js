@@ -22,6 +22,12 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      {
+        actorId:4,
+        movieId:4,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ])
 
   },

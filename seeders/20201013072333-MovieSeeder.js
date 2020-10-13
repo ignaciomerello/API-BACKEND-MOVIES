@@ -27,6 +27,14 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      {
+        title: "Super Mario Bros. (1993)",
+        img_path: "https://www.imdb.com/title/tt0108255/?ref_=nv_sr_srsg_0",
+        description: "Two Brooklyn plumbers, Mario and Luigi, must travel to another dimension to rescue a princess from the evil dictator King Koopa and stop him from taking over the world.",
+        genre: "Sci-fi",
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ])
   },
 
