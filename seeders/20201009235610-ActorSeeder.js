@@ -5,10 +5,26 @@ module.exports = {
 
     return queryInterface.bulkInsert('Actors', [
       {
-        name: "Pepico",
-        gender:"Muchacho",
-        profile_path:"Imdb",
-        popularity:0,
+        name: "Steve Urkel",
+        gender:"Engendro",
+        profile_path:"https://www.imdb.com/name/nm0924918/",
+        popularity:9.9,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: "Pilar Lopez de Ayala",
+        gender:"Muchacha",
+        profile_path:"https://www.imdb.com/name/nm0529813/",
+        popularity:4.5,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: "Alf",
+        gender:"Alien",
+        profile_path:"https://www.imdb.com/name/nm0299319/?ref_=tt_cl_t1",
+        popularity:5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
