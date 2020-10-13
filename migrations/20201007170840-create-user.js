@@ -21,6 +21,8 @@ module.exports = {
         allowNull: false
 
       },
+      confirmed: DataTypes.BOOLEAN,
+      token: DataTypes.STRING,
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

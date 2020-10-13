@@ -8,8 +8,8 @@ const app = express();
 
 const PORT = 3000;
 
-app.use(express.json()); //middleware: parsea el body JSON y evita que req.body sea undefined
-app.use("/movie", movieRoutes);
-app.use("/user", userRoutes);
-app.use("/order", orderRoutes);
+app.use(express.json()); //middleware: parses the JSON body not allowing the req.body to return undefined
+app.use("/movies", movieRoutes);
+app.use("/users", userRoutes);
+app.use("/orders", orderRoutes);
 app.listen (PORT, () => console.log('Server running' + PORT));

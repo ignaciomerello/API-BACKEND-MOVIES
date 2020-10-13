@@ -1,6 +1,8 @@
 const {
-    Movie,Actor
-} = require("../models");
+    Movie,Actor, sequelize
+} = require('../models');
+
+const {Op} = require('sequelize');
 
 const MovieController = {
     async getAll(req, res) {
@@ -17,13 +19,13 @@ const MovieController = {
     },
     async getById(req, res) {
         try {
-            const value = await Movie.findByPk(req.params.id);
+            const value = await Movie.findByPk(req.params.id, { include:Actor });
             if (!value) {
                 return res.status(400).json({
                     message: 'Movie does not exist'
                 });
             }
-            res.send(value);
+            res.send(value,);
 
         } catch (error) {
             console.log(error);
@@ -32,9 +34,17 @@ const MovieController = {
             });
         }
     },
-    async getById(req, res) {
+
+
+    async getByTitle(req, res) {
+        const title = req.params.title;
         try {
-            const value = await Movie.findByPk(req.params.id);
+            const value = await Movie.findAll({
+                where : { title:{[Op.like]: `%${title}%`}},
+                include : Actor,
+                attributes: { exclude: ['createdAt', 'updatedAt'] },//EXCLUDE DATESTAMPS
+            });
+            
             if (!value) {
                 return res.status(400).json({
                     message: 'Movie does not exist'
@@ -45,10 +55,11 @@ const MovieController = {
         } catch (error) {
             console.log(error);
             res.status(500).json({
-                message: 'Unable to get movie selected'
+                message: 'Unable to get the movie by name'
             });
         }
     },
+
     async create(req, res) {
         try {
             const value = await Movie.create(req.body);
