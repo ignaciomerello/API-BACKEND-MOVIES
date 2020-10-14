@@ -3,8 +3,8 @@ const { Order } = require("../models");
 const OrderController = {
     async getAll(req,res){
         try {
-            const value = await Order.findAll();
-            res.send(value);
+            const orders = await Order.findAll();
+            res.send(orders);
             
         } catch (error) {
             console.log(error);
@@ -13,11 +13,11 @@ const OrderController = {
     },
     async getById(req,res){
         try {
-            const value = await Order.findByPk(req.params.id);
-            if(!value){
+            const order = await Order.findByPk(req.params.id);
+            if(!order){
                 return res.status(400).json({message:'Order was not found'}); 
             }
-            res.send(value);
+            res.send(order);
 
         } catch (error) {
             console.log(error);
@@ -26,12 +26,13 @@ const OrderController = {
     },
     async create(req,res){
         try {
-            const value = await Order.create(req.body);
-            res.send(value);
+            const order = await Order.create({UserId:req.user.id});
+            await order.addMovie(req.body.movies);
+            res.send(order);
             
         } catch (error) {
             console.log(error);
-            res.status(500).json({message:'Unable to get order selected'});
+            res.status(500).json({message:'Unable to insert order'});
         }
     },
 }

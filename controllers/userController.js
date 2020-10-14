@@ -57,8 +57,7 @@ const UserController = {
                     })
                 }
                 //PROCESS.ENV NOT WORKING 
-                const Poop = "Poop";
-                const token = jwt.sign({ id: user.id }, Poop, { expiresIn: '30d' });
+                const token = jwt.sign({ id: user.id }, process.env.SECRET_AUTH_JWT, { expiresIn: '30d' });
                 // const token = jwt.sign({ id: user.id }, process.env.SECRET_AUTH_JWT, { expiresIn: '30d' });
                 user.token = token; //añade el token a la instancia user
                 await user.save() // valida & actualiza en la base de datos la instancia de user
