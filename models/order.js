@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsToMany(models.Movie, { through:'OrderMovie'});    }
   };
   Order.init({
-    userId: DataTypes.INTEGER,
+    UserId: DataTypes.INTEGER,
     returnDate: DataTypes.DATE
   }, {
     sequelize,
