@@ -6,7 +6,7 @@ const orderRoutes = require('./routes/orderRoutes');
 
 const app = express();
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json()); //middleware: parses the JSON body not allowing the req.body to return undefined
 app.use("/movies", movieRoutes);
