@@ -1,10 +1,12 @@
 {
   "name": "api-backend-movies",
   "version": "1.0.0",
-  "description": "IN THIS PROJECT I WILL FETCH THE RESULTS FROM THE API REST THEMOVIEDB CREATING THE ENDPOINTS TO ACCESS THEIR MOVIES ARCHIVE",
+  "description": "GeeksHubs Academy BackEnd Movies Project : This project is a BackEnd of movies from wich a user can Signup and Login in order to access to the movies previously lodged or seeded.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
